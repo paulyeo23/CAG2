@@ -1,0 +1,13 @@
+<% var body = `
+    <h2>Financial Goals Result</h2>
+    <p>Bank Value: <%= bankValue %></p>
+    <p>Monthly Income: <%= monthlyIncome %></p>
+    <p>Monthly Spending: <%= monthlySpending %></p>
+    <p>Year End Goal: <%= yearEndGoal %></p>
+    <h3>
+        <%= goalAchieved ? 'Congratulations! You have achieved your year-end goal.' : 'Unfortunately, you have not achieved your year-end goal.' %>
+    </h3>
+
+    <a href="/">Go back to transactions</a>
+` %>
+<%- include('layout', { body: body }) %>

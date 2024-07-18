@@ -1,0 +1,35 @@
+<% var body = `
+    <h2>Transactions</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Bank Value</th>
+                <th>Monthly Income</th>
+                <th>Monthly Spending</th>
+                <th>Desired Goal</th>
+                <th>Date</th>
+                <th>Goal Achieved</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% transactions.forEach(transaction => { %>
+                <tr>
+                    <td><%= transaction.name %></td>
+                    <td><%= transaction.bank_value %></td>
+                    <td><%= transaction.monthly_income %></td>
+                    <td><%= transaction.monthly_spending %></td>
+                    <td><%= transaction.desired_goal %></td>
+                    <td><%= transaction.date %></td>
+                    <td><%= transaction.goalAchieved ? 'Yes' : 'No' %></td>
+                    <td>
+                        <a href="/edit/<%= transaction.id %>">Edit</a>
+                        <a href="/delete/<%= transaction.id %>">Delete</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+` %>
+<%- include('layout', { body: body }) %>
